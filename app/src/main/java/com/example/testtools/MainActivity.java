@@ -1,16 +1,15 @@
 package com.example.testtools;
 
 import androidx.appcompat.app.AppCompatActivity;
+import androidx.recyclerview.widget.ItemTouchHelper;
 
+import android.content.Intent;
 import android.os.Bundle;
 import android.util.Log;
 import android.view.View;
 import android.widget.TextView;
 
 public class MainActivity extends AppCompatActivity {
-
-    private TextView mTv;
-    private int num = 0;
 
 
     @Override
@@ -21,15 +20,21 @@ public class MainActivity extends AppCompatActivity {
     }
 
     private void initViewe() {
-        mTv = findViewById(R.id.mTv);
-        mTv.setOnClickListener(new View.OnClickListener() {
+//        itemTouchHolder
+        findViewById(R.id.mBtn_itemToouchHolder).setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                mTv.setText("啦啦啦啊" + (++num));
-                Log.e("Mainactivity", num + "");
-                Log.e("第二次提交","测试");
+                startActivity(new Intent(MainActivity.this, ItemTouchHolderActivity.class));
             }
         });
+//        悬浮窗
+        findViewById(R.id.mBtn_floatingWindows).setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+
+            }
+        });
+
 
     }
 }
